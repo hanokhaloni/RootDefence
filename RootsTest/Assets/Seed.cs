@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.AI.Navigation;
 using UnityEngine;
 
 public class Seed : MonoBehaviour
@@ -16,11 +15,6 @@ public class Seed : MonoBehaviour
   {
     _animator.SetTrigger("Breath");
     rigidbody.isKinematic = true;
-
-    if (other.CompareTag("Floor"))
-    {
-      other.GetComponent<NavMeshSurface>().BuildNavMesh();
-    }
   }
 
     private void Awake()

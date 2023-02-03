@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-    //    anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -33,10 +33,10 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
-          //  anim.SetInteger("Walk", 1);
+            anim.SetInteger("Walk", 1);
         }
         else {
-          //  anim.SetInteger("Walk", 0);
+            anim.SetInteger("Walk", 0);
         }
 
         transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
