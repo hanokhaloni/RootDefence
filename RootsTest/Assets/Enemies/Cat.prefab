@@ -261,7 +261,6 @@ GameObject:
   - component: {fileID: 4510199840278072196}
   - component: {fileID: 4517595111760282906}
   - component: {fileID: 4541646247836343092}
-  - component: {fileID: 4594686891630831358}
   - component: {fileID: -9188365059286821675}
   - component: {fileID: -3339003955047214810}
   m_Layer: 0
@@ -278,7 +277,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4490982657598968284}
-  m_LocalRotation: {x: -0, y: -0.98668617, z: -0, w: -0.16263586}
+  m_LocalRotation: {x: -0, y: -0.986686, z: 0, w: -0.16263694}
   m_LocalPosition: {x: 4.72, y: -0.004, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -341,21 +340,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &4594686891630831358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490982657598968284}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40079260bda69f14c80332a04d1632a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 3
-  jumpForce: 300
-  timeBeforeNextJump: 1.2
 --- !u!195 &-9188365059286821675
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -390,7 +374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28010e4ec9df4fdb8b529a36c264f03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: -6312251698650213706, guid: af80dffe4c78f42ada149334edf83b7f, type: 3}
+  navMeshAgent: {fileID: -9188365059286821675}
+  stoppingDistanceOffset: 0
+  animator: {fileID: 4541646247836343092}
 --- !u!1 &4491057318042381486
 GameObject:
   m_ObjectHideFlags: 0
