@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18066181, g: 0.22616644, b: 0.30712572, a: 1}
+  m_IndirectSpecularColor: {r: 0.1806623, g: 0.22616707, b: 0.30712664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1224,6 +1224,7 @@ MonoBehaviour:
   _camera: {fileID: 534669904}
   seedPrefab: {fileID: 1061114704184938210, guid: 335e0a664f85d4816bbf580d3ef53ead, type: 3}
   seedInstantiationHeightOffset: 3
+  shootStrength: 0
 --- !u!4 &1640314959
 Transform:
   m_ObjectHideFlags: 0
@@ -1457,6 +1458,10 @@ PrefabInstance:
       propertyPath: _camera
       value: 
       objectReference: {fileID: 534669904}
+    - target: {fileID: 1061114704184938208, guid: 335e0a664f85d4816bbf580d3ef53ead, type: 3}
+      propertyPath: shootStrengthModifier
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1061114704184938210, guid: 335e0a664f85d4816bbf580d3ef53ead, type: 3}
       propertyPath: m_Name
       value: Seed
