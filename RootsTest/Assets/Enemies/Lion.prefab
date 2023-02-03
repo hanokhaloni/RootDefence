@@ -392,6 +392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: -6312251698650213706}
+  stoppingDistanceOffset: 0
+  animator: {fileID: 5036291859641885758}
 --- !u!1 &4950707047340553638
 GameObject:
   m_ObjectHideFlags: 0

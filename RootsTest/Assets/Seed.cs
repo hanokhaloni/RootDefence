@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class Seed : MonoBehaviour
@@ -15,7 +16,13 @@ public class Seed : MonoBehaviour
   {
     _animator.SetTrigger("Breath");
     rigidbody.isKinematic = true;
+    if (other.CompareTag("Floor"))
+    {
+        other.GetComponent<NavMeshSurface>().BuildNavMesh();
+    }
   }
+  
+
 
     private void Awake()
     {
@@ -23,9 +30,7 @@ public class Seed : MonoBehaviour
     }
 
     public void shoot(float strength) {
-       
-    
-            Debug.Log("shooting " + strength);
+        Debug.Log("shooting " + strength);
         //m_Rigidbody.AddForce(transform.forward * strength * 100);
         m_Rigidbody.velocity = Vector3.forward * strength * shootStrengthModifier;
     
