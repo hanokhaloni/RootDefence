@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject seedPrefab;
     [SerializeField] private float seedInstantiationHeightOffset;
     [SerializeField] private float shootStrength    ;
-    [SerializeField] private NavMeshSurface navMeshSurface;    
-    
+    [SerializeField] private NavMeshSurface navMeshSurface;
+
+    [SerializeField] private AudioClip throwAudio;
+
 
     private void Update()
     {
