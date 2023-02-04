@@ -10,9 +10,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject seedPrefab;
     [SerializeField] private float seedInstantiationHeightOffset;
     [SerializeField] private float shootStrength    ;
-    [SerializeField] private NavMeshSurface navMeshSurface;    
-    [SerializeField] private AudioClip throwAudio;
+    [SerializeField] private NavMeshSurface navMeshSurface;
 
+
+    AudioSource audioSource;
+    [SerializeField] private AudioClip throwAudio;
+    [SerializeField] private AudioClip seedHitGroundAudio;
+
+    
+
+    private void Start()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -26,7 +36,7 @@ public class GameManager : MonoBehaviour
             if (shootStrength > 0.1f)
             {
                 ThrowSound();
-
+                
                 Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
@@ -37,6 +47,9 @@ public class GameManager : MonoBehaviour
                     Seed seed = Instantiate(seedPrefab, pos, Quaternion.identity).GetComponent<Seed>();
                     seed.shoot(shootStrength);
                     navMeshSurface.BuildNavMesh();
+
+                    SeedHitGroundSound();
+
                     shootStrength = 0;
                 }
             }
@@ -45,7 +58,12 @@ public class GameManager : MonoBehaviour
 
     private void ThrowSound()
     {
-        AudioSource audioSource = GetComponent<AudioSource>();
+        
         audioSource.PlayOneShot(throwAudio);
+    }
+
+    private void SeedHitGroundSound()
+    {
+        audioSource.PlayOneShot(seedHitGroundAudio);
     }
 }
