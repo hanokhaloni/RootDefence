@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Unity.AI.Navigation;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -23,7 +25,8 @@ public class GameManager : MonoBehaviour
     {
         ActualSeedsAmount = SeedsStartingAmount;
         SetUpButtonCount();
-     //    audioSource = GetComponent<AudioSource>();
+        StartCoroutine(nameof(PlaySounds));
+        //    audioSource = GetComponent<AudioSource>();
     }
     
     private void Update()
@@ -85,6 +88,13 @@ public class GameManager : MonoBehaviour
     {
         currentSeedIndex = index;
     }
+    
+    private IEnumerator PlaySounds()
+    {
+        SoundManager.Instance.Play("Head");
+        yield return new WaitForSeconds(SoundManager.Instance.GetClip("Head").length);
+        SoundManager.Instance.Play("Body");
 
+    }
   
 }

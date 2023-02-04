@@ -49,9 +49,27 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5522ceaae69cf4e49bd34612045c53dc, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
+    speed: 1
     source: {fileID: 0}
   - name: Shoot
     clip: {fileID: 8300000, guid: 9c21aeb96fc6e4568ae064c59a91e25b, type: 3}
     volume: 1
     pitch: 1
+    loop: 0
+    speed: 1
+    source: {fileID: 0}
+  - name: Head
+    clip: {fileID: 8300000, guid: 2748eba43341e4e51a3f488b14c8a9cd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    speed: 1
+    source: {fileID: 0}
+  - name: Body
+    clip: {fileID: 8300000, guid: 36af7a8fcc975467ca1df5ed16fac4ff, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    speed: 1
     source: {fileID: 0}
