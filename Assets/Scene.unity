@@ -421,6 +421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 8538474750658560112, guid: 2c7d06701e9b14535bfd018f5c4f1125, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c7d06701e9b14535bfd018f5c4f1125, type: 3}
 --- !u!1001 &392798712
@@ -831,6 +835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Penguin
       objectReference: {fileID: 0}
+    - target: {fileID: 2172577498306725434, guid: 2ba854e41bce24af2b5a5f362736073a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2175589045260135284, guid: 2ba854e41bce24af2b5a5f362736073a, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1105,6 +1113,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 4490982657598968284, guid: 547cca1b720644d48a048d0f3cb58c2a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4492877711652150196, guid: 547cca1b720644d48a048d0f3cb58c2a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1306,6 +1318,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lion
       objectReference: {fileID: 0}
+    - target: {fileID: 4950597499512436844, guid: af80dffe4c78f42ada149334edf83b7f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af80dffe4c78f42ada149334edf83b7f, type: 3}
 --- !u!1 &1603405461
@@ -1435,7 +1451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 534669904}
-  seedPrefab: {fileID: 1061114704184938210, guid: 335e0a664f85d4816bbf580d3ef53ead, type: 3}
+  seedPrefab: {fileID: 1061114704184938210, guid: b0a7aeb75fdfb4340911381c3d4b38e6, type: 3}
   seedInstantiationHeightOffset: 3
   shootStrength: 0
   navMeshSurface: {fileID: 1880372901}
@@ -1657,6 +1673,10 @@ PrefabInstance:
     - target: {fileID: 4283512416306643843, guid: cf7e92cff7f2246d5812ef8fa5128c08, type: 3}
       propertyPath: m_Name
       value: Chicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283512416306643843, guid: cf7e92cff7f2246d5812ef8fa5128c08, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4286204809680899267, guid: cf7e92cff7f2246d5812ef8fa5128c08, type: 3}
       propertyPath: m_RootOrder

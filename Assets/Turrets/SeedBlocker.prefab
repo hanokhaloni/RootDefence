@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1061114704184938213}
   - component: {fileID: -1357148217470966394}
   m_Layer: 0
-  m_Name: Seed
+  m_Name: SeedBlocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

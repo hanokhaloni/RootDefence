@@ -12,10 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float shootStrength    ;
     [SerializeField] private NavMeshSurface navMeshSurface;    
     
-
     private void Update()
     {
-
         if (Input.GetMouseButton(0))
         {
             shootStrength += Time.deltaTime;
@@ -38,11 +36,7 @@ public class GameManager : MonoBehaviour
                     shootStrength = 0;
                 }
             }
-
-
         }
-
-
     }
 
     private void FixedUpdate()
