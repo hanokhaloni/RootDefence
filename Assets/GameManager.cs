@@ -10,11 +10,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float seedInstantiationHeightOffset;
     [SerializeField] private float shootStrength    ;
     [SerializeField] private NavMeshSurface navMeshSurface;    
-    [SerializeField] private AudioClip throwAudio;
+//    [SerializeField] private AudioClip throwAudio;
     [SerializeField] private GameObject [] seedPrefab;
     [SerializeField] private int [] SeedsStartingAmount;
     [SerializeField] private Text [] SeedsStartingAmountTexts;
-    AudioSource audioSource;
+ //   AudioSource audioSource;
     [SerializeField] private AudioClip seedHitGroundAudio;
     private int currentSeedIndex;
     private int [] ActualSeedsAmount;
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         ActualSeedsAmount = SeedsStartingAmount;
         SetUpButtonCount();
-         audioSource = GetComponent<AudioSource>();
+     //    audioSource = GetComponent<AudioSource>();
     }
     
     private void Update()
@@ -43,8 +43,6 @@ public class GameManager : MonoBehaviour
             {
                 if (shootStrength > 0.1f)
                 {
-                    ThrowSound();
-                
                     Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
                     if (Physics.Raycast(ray, out hit, 100))
@@ -60,7 +58,6 @@ public class GameManager : MonoBehaviour
                         }
 
                         ActualSeedsAmount[currentSeedIndex]--;
-                        SeedHitGroundSound();
                         UpdateButtonCount();
                         shootStrength = 0;
                     }
@@ -89,13 +86,5 @@ public class GameManager : MonoBehaviour
         currentSeedIndex = index;
     }
 
-    private void ThrowSound()
-    {
-        audioSource.PlayOneShot(throwAudio);
-    }
-
-    private void SeedHitGroundSound()
-    {
-        audioSource.PlayOneShot(seedHitGroundAudio);
-    }
+  
 }

@@ -6,13 +6,20 @@ public class Seed : MonoBehaviour
   [SerializeField] private Animator _animator;
   [SerializeField] private Rigidbody rigidbody;
   [SerializeField] private float shootStrengthModifier;
-
+  private bool growSoundPlayed;
+  
   private void OnTriggerEnter(Collider other)
   {
       if (other.CompareTag("Floor"))
       {
+          if (!growSoundPlayed)
+          {
+              SoundManager.Instance.Play("HitGround");
+              growSoundPlayed = true;
+          }
           _animator.SetTrigger("Breath");
           rigidbody.isKinematic = true; 
+
       }
       else
       {

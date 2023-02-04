@@ -49,6 +49,7 @@ public class KillerTurretController : MonoBehaviour
     void Shoot()
     {
         Instantiate(projectile, aim.position, aim.rotation);
+        SoundManager.Instance.Play("Shoot");
     }
 
     void AnimateShoot()
