@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
     public float maxHealth = 100.0f;
 
     public HealthBar healthBar;
+    public GameOverManager gameOverManager;
+
 
     void Start()
     {
@@ -17,10 +19,7 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DamagePlayer(10.0f);
-        }
+
     }
 
     public void DamagePlayer(float damage)
@@ -28,5 +27,10 @@ public class Health : MonoBehaviour
         curHealth -= damage;
 
         healthBar.SetHealth(curHealth / maxHealth);
+
+        if (curHealth < 0.0f)
+        {
+            gameOverManager.GameOver();
+        }
     }
 }
