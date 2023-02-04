@@ -1,4 +1,5 @@
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -13,8 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject [] seedPrefab;
     [SerializeField] private int [] SeedsStartingAmount;
     [SerializeField] private Text [] SeedsStartingAmountTexts;
-
-    
+    AudioSource audioSource;
+    [SerializeField] private AudioClip seedHitGroundAudio;
     private int currentSeedIndex;
     private int [] ActualSeedsAmount;
 
@@ -22,8 +23,9 @@ public class GameManager : MonoBehaviour
     {
         ActualSeedsAmount = SeedsStartingAmount;
         SetUpButtonCount();
+         audioSource = GetComponent<AudioSource>();
     }
-
+    
     private void Update()
     {
         if (Input.GetMouseButton(0))
@@ -34,31 +36,39 @@ public class GameManager : MonoBehaviour
         var eventSystem = EventSystem.current;
         if (eventSystem.IsPointerOverGameObject())
             return;
-        
+
         if (Input.GetMouseButtonUp(0))
         {
             if (ActualSeedsAmount [currentSeedIndex] > 0)
             {
                 if (shootStrength > 0.1f)
                 {
+                    ThrowSound();
+                
                     Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
-
                     if (Physics.Raycast(ray, out hit, 100))
                     {
-                        var pos = new Vector3(hit.point.x, hit.point.y + seedInstantiationHeightOffset, hit.point.z);
+                        if (Physics.Raycast(ray, out hit, 100))
+                        {
+                            var pos = new Vector3(hit.point.x, hit.point.y + seedInstantiationHeightOffset, hit.point.z);
 
-                        Seed seed = Instantiate(seedPrefab[currentSeedIndex], pos, Quaternion.identity).GetComponent<Seed>();
-                        seed.shoot(shootStrength);
-                        navMeshSurface.BuildNavMesh();
+                            Seed seed = Instantiate(seedPrefab[currentSeedIndex], pos, Quaternion.identity).GetComponent<Seed>();
+                            seed.shoot(shootStrength);
+                            navMeshSurface.BuildNavMesh();
+                            shootStrength = 0;
+                        }
+
+                        ActualSeedsAmount[currentSeedIndex]--;
+                        SeedHitGroundSound();
+                        UpdateButtonCount();
                         shootStrength = 0;
                     }
-
-                    ActualSeedsAmount[currentSeedIndex]--;
-                    UpdateButtonCount();
+                
                 }
             }
         }
+        
     }
 
     private void UpdateButtonCount()
@@ -77,5 +87,15 @@ public class GameManager : MonoBehaviour
     public void SwitchSeedByIndex(int index)
     {
         currentSeedIndex = index;
+    }
+
+    private void ThrowSound()
+    {
+        audioSource.PlayOneShot(throwAudio);
+    }
+
+    private void SeedHitGroundSound()
+    {
+        audioSource.PlayOneShot(seedHitGroundAudio);
     }
 }
