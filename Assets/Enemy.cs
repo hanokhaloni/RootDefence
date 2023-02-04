@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
         {
             target = GameObject.FindWithTag("Player").transform;
             SetAgentTarget(target.position);
-            hasTarget = true;
+            //hasTarget = true;
             animator.SetInteger("Walk", 1);
         }
     }

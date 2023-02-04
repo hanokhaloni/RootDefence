@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,16 +10,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject seedPrefab;
     [SerializeField] private float seedInstantiationHeightOffset;
     [SerializeField] private float shootStrength    ;
-
+    [SerializeField] private NavMeshSurface navMeshSurface;    
+    
 
     private void Update()
     {
-        
+
         if (Input.GetMouseButton(0))
         {
             shootStrength += Time.deltaTime;
         }
-        if(Input.GetMouseButtonUp(0))
+
+        if (Input.GetMouseButtonUp(0))
         {
             if (shootStrength > 0.1f)
             {
@@ -36,12 +39,14 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-           
+
         }
-        
-          
-            
-		}
-    
-    
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        navMeshSurface.BuildNavMesh();
+    }
 }
