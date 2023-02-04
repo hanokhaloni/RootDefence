@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float seedInstantiationHeightOffset;
     [SerializeField] private float shootStrength    ;
     [SerializeField] private NavMeshSurface navMeshSurface;    
-    
+    [SerializeField] private AudioClip throwAudio;
+
+
     private void Update()
     {
         if (Input.GetMouseButton(0))
@@ -32,7 +34,7 @@ public class GameManager : MonoBehaviour
 
                     Seed seed = Instantiate(seedPrefab, pos, Quaternion.identity).GetComponent<Seed>();
                     seed.shoot(shootStrength);
-
+                    navMeshSurface.BuildNavMesh();
                     shootStrength = 0;
                 }
             }
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        navMeshSurface.BuildNavMesh();
+
+        
     }
 }
