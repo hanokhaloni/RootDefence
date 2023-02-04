@@ -44,7 +44,8 @@ public class EnemySpawner : MonoBehaviour
 
             Vector3 velocity = speed * direction;
 
-            GameObject name = Instantiate(spawnObject, spawnPoint.position, Quaternion.identity);
+            GameObject name = Instantiate(spawnObject, spawnPoint.position,Quaternion.identity);
+            name.transform.rotation = Quaternion.Euler(0,180,0);
             name.GetComponent<Rigidbody>().velocity = velocity;
             name.GetComponent<Rigidbody>().useGravity = true;
 

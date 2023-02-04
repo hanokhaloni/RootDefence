@@ -48,23 +48,18 @@ public class GameManager : MonoBehaviour
                 {
                     Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit, 100))
+                    if (Physics.Raycast(ray, out hit, 1000))
                     {
-                        if (Physics.Raycast(ray, out hit, 100))
-                        {
-                            var pos = new Vector3(hit.point.x, hit.point.y + seedInstantiationHeightOffset, hit.point.z);
+                        var pos = new Vector3(hit.point.x, hit.point.y + seedInstantiationHeightOffset, hit.point.z);
 
                             Seed seed = Instantiate(seedPrefab[currentSeedIndex], pos, Quaternion.identity).GetComponent<Seed>();
                             seed.shoot(shootStrength);
                             navMeshSurface.BuildNavMesh();
                             shootStrength = 0;
-                        }
-
-                        ActualSeedsAmount[currentSeedIndex]--;
-                        UpdateButtonCount();
-                        shootStrength = 0;
                     }
-                
+                    ActualSeedsAmount[currentSeedIndex]--;
+                    UpdateButtonCount();
+                    shootStrength = 0;
                 }
             }
         }

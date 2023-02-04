@@ -33,7 +33,7 @@ public class Seed : MonoBehaviour
     }
 
     public void shoot(float strength) {
-        m_Rigidbody.velocity = Vector3.forward * strength * shootStrengthModifier;
+        m_Rigidbody.velocity = Vector3.right * strength * shootStrengthModifier;
     }
 
 }
