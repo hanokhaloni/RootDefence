@@ -16,8 +16,6 @@ public class EnemySpawner : MonoBehaviour
     int x = 0;
     float timer = 0;
 
-
-
     void Start()
     {
         timer = 0;
