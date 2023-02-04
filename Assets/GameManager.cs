@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
                     Seed seed = Instantiate(seedPrefab, pos, Quaternion.identity).GetComponent<Seed>();
                     seed.shoot(shootStrength);
-
+                    navMeshSurface.BuildNavMesh();
                     shootStrength = 0;
                 }
             }
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        navMeshSurface.BuildNavMesh();
+
+        
     }
 }
