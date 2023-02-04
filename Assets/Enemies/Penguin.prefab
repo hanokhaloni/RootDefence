@@ -178,11 +178,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2175589045260135284}
   - component: {fileID: 2266309705554832228}
-  - component: {fileID: 2284902193277672936}
   - component: {fileID: 2218518686170255272}
   - component: {fileID: 2225363864452397282}
   - component: {fileID: -8351891774259495283}
   - component: {fileID: -6662479445153779557}
+  - component: {fileID: 5085923981327436215}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Enemy
@@ -226,21 +226,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &2284902193277672936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2172577498306725434}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40079260bda69f14c80332a04d1632a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 3
-  jumpForce: 300
-  timeBeforeNextJump: 1.2
 --- !u!65 &2218518686170255272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -305,8 +290,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: -8351891774259495283}
-  stoppingDistanceOffset: 0
   animator: {fileID: 2266309705554832228}
+  _blinkMat: {fileID: 2100000, guid: 24c7222d2329f44a88191f236a7c3ab5, type: 2}
+  _ogMat: {fileID: 2100000, guid: c7e294e05bde65747aa9d03b71fd2096, type: 2}
+--- !u!65 &5085923981327436215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172577498306725434}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.83, y: 2.89, z: 1.9}
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!1 &2172625863551806422
 GameObject:
   m_ObjectHideFlags: 0

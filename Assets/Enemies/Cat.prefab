@@ -261,9 +261,9 @@ GameObject:
   - component: {fileID: 4510199840278072196}
   - component: {fileID: 4517595111760282906}
   - component: {fileID: 4541646247836343092}
-  - component: {fileID: 4594686891630831358}
   - component: {fileID: -9188365059286821675}
   - component: {fileID: -3339003955047214810}
+  - component: {fileID: 2207560173820577831}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Enemy
@@ -341,21 +341,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &4594686891630831358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490982657598968284}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40079260bda69f14c80332a04d1632a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 3
-  jumpForce: 300
-  timeBeforeNextJump: 1.2
 --- !u!195 &-9188365059286821675
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -391,8 +376,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: -9188365059286821675}
-  stoppingDistanceOffset: 0
   animator: {fileID: 4541646247836343092}
+  _blinkMat: {fileID: 2100000, guid: 24c7222d2329f44a88191f236a7c3ab5, type: 2}
+  _ogMat: {fileID: 2100000, guid: c7e294e05bde65747aa9d03b71fd2096, type: 2}
+--- !u!65 &2207560173820577831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490982657598968284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6, y: 2.86, z: 1.63}
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1 &4491057318042381486
 GameObject:
   m_ObjectHideFlags: 0

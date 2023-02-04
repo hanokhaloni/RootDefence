@@ -427,9 +427,9 @@ GameObject:
   - component: {fileID: 8555429927744312874}
   - component: {fileID: 8544259870677390868}
   - component: {fileID: 8586231374851892430}
-  - component: {fileID: 8641390216851645668}
   - component: {fileID: -3529427674648839783}
   - component: {fileID: 8509932857519152284}
+  - component: {fileID: -3992606841503054852}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Enemy
@@ -509,21 +509,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &8641390216851645668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8538474750658560112}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40079260bda69f14c80332a04d1632a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 3
-  jumpForce: 300
-  timeBeforeNextJump: 1.2
 --- !u!195 &-3529427674648839783
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -559,8 +544,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: -3529427674648839783}
-  stoppingDistanceOffset: 0
   animator: {fileID: 8586231374851892430}
+  _blinkMat: {fileID: 2100000, guid: 24c7222d2329f44a88191f236a7c3ab5, type: 2}
+  _ogMat: {fileID: 2100000, guid: c7e294e05bde65747aa9d03b71fd2096, type: 2}
+--- !u!65 &-3992606841503054852
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538474750658560112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.93, y: 2.32, z: 1.75}
+  m_Center: {x: 0, y: 0.73, z: 0}
 --- !u!1 &8538510430975718804
 GameObject:
   m_ObjectHideFlags: 0

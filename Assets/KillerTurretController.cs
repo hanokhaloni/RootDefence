@@ -19,12 +19,22 @@ public class KillerTurretController : MonoBehaviour
         InvokeRepeating("AnimateShoot",timeToWaitBeforeFirstShot - 1f, timeToWaitBeforeEachShot);
     }
 
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            target = other.gameObject;
+            //    Debug.Log("enemyNear");
+        }
+    }
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
             target = other.gameObject;
-            Debug.Log("enemyNear");
+        //    Debug.Log("enemyNear");
         }
     }
 
