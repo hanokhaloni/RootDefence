@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
         {
             if (shootStrength > 0.1f)
             {
+                ThrowSound();
+
                 Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
@@ -41,9 +43,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void ThrowSound()
     {
-
-        
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(throwAudio);
     }
 }
